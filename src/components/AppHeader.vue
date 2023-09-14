@@ -1,11 +1,16 @@
 <script>
+import SearchBar from "./SearchBar.vue";
+
 export default {
   data() {
     return {};
   },
+  components: { SearchBar },
 };
 </script>
 
-<template></template>
+<template>
+  <SearchBar />
+</template>
 
 <style lang="scss" scoped></style>
