@@ -8,6 +8,7 @@ export default {
   components: { SearchBar },
   methods: {
     search() {
+      console.log("mi hai cliccato");
       this.$emit("search");
     },
   },

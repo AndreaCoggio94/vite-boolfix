@@ -9,9 +9,6 @@ export default {
   data() {
     return {
       store,
-      cards: [],
-      finalLink:
-        store.searchMovie + store.apiKey + store.query + store.filterData,
     };
   },
   components: {
@@ -21,9 +18,7 @@ export default {
   methods: {
     fetchCards(endpoint) {
       axios.get(endpoint).then((response) => {
-        console.log(response);
         const cardsData = response.data.results.map((card) => {
-          console.log(card);
           const {
             id,
             original_language,
@@ -42,17 +37,17 @@ export default {
           };
         });
 
-        this.cards = cardsData;
-        console.log(this.cards);
+        this.store.cards = cardsData;
+        console.log(this.store.cards);
       });
     },
     search() {
-      console.log("clicked");
+      (this.store.finalLink =
+        store.searchMovie + store.apiKey + store.query + store.filterData),
+        this.fetchCards(this.store.finalLink);
     },
   },
-  created() {
-    this.fetchCards(this.finalLink);
-  },
+  created() {},
 };
 </script>
 
