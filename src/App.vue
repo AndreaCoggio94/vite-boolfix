@@ -6,7 +6,9 @@ import AppMain from "./components/AppMain.vue";
 
 export default {
   data() {
-    return {};
+    return {
+      store,
+    };
   },
   components: {
     AppHeader,
@@ -15,6 +17,9 @@ export default {
 };
 </script>
 
-<template></template>
+<template>
+  <AppHeader />
+  <AppMain />
+</template>
 
 <style lang="scss"></style>
