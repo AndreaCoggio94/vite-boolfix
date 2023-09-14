@@ -3,6 +3,9 @@ export default {
   data() {
     return {};
   },
+  props: {
+    cards: Array,
+  },
 };
 </script>
 

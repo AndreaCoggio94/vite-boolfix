@@ -53,7 +53,7 @@ export default {
 
 <template>
   <AppHeader @search="search" />
-  <AppMain />
+  <AppMain :cards="this.store.cards" />
 </template>
 
 <style lang="scss"></style>
