@@ -21,7 +21,13 @@ export default {
       v-model="store.filterData"
     />
     <div class="input-group-append">
-      <button class="btn btn-outline-secondary" type="button">Button</button>
+      <button
+        @click="$emit('search')"
+        class="btn btn-outline-secondary"
+        type="button"
+      >
+        Button
+      </button>
     </div>
   </div>
 </template>
