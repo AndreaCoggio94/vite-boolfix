@@ -1,7 +1,9 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      flags: ["it", "en", "es", "fr", "ja"],
+    };
   },
   props: {
     language: String,
@@ -21,7 +23,12 @@ export default {
       <div class="card-body">
         <h4 class="card-title">{{ title }}</h4>
         <h5 class="card-title">{{ originalTitle }}</h5>
-        <img :src="'/public/flags/' + language + '.png'" alt="" />
+        <img
+          v-if="flags.includes(language)"
+          :src="'/public/flags/' + language + '.png'"
+          alt=""
+        />
+        <img v-else="" :src="'/public/flags/x.png'" alt="" />
         <p class="card-text">{{ desc }}</p>
         <p>Vote of {{ vote }}</p>
       </div>
