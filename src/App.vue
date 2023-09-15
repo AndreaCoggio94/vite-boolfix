@@ -41,6 +41,8 @@ export default {
       });
     },
     search() {
+      // console.log("work");
+
       (this.store.finalLink =
         store.searchMovie + store.apiKey + store.query + store.filterData),
         this.fetchCards(this.store.finalLink);
@@ -56,3 +58,8 @@ export default {
 </template>
 
 <style lang="scss"></style>
+
+<!-- params: {
+  query: searchData,
+  api_key: "api_key=ab7bbb91023578105b166ebbfc1c5d68",
+}, -->

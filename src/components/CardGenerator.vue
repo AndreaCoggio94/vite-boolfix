@@ -1,36 +1,32 @@
 <script>
-import { Flag } from "vue-flagpack";
-
 export default {
   data() {
     return {};
   },
   props: {
-    languague: String,
+    language: String,
     title: String,
     vote: Number,
     originalTitle: String,
     desc: String,
   },
-  methods: {
-    whatIs() {
-      console.log(typeof this.title);
-      console.log(typeof this.languague);
-      console.log(typeof this.vote);
-      console.log(typeof this.originalTitle);
-      console.log(typeof this.desc);
-    },
-  },
+  methods: {},
 };
 </script>
 
 <template>
-  <button @click="whatIs">what?</button>
-  <h1>{{ originalTitle }}</h1>
-  <address>{{ title }}</address>
-  <h3>{{ languague }}</h3>
-  <h4>{{ vote }}</h4>
-  <p>{{ desc }}</p>
+  <div class="container">
+    <div class="card">
+      <img class="card-img-top" src="" :alt="title" />
+      <div class="card-body">
+        <h4 class="card-title">{{ title }}</h4>
+        <h5 class="card-title">{{ originalTitle }}</h5>
+        <img :src="'/public/flags/' + language + '.png'" alt="" />
+        <p class="card-text">{{ desc }}</p>
+        <p>Vote of {{ vote }}</p>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped></style>
