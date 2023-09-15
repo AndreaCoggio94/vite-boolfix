@@ -19,7 +19,6 @@ export default {
     fetchCards(endpoint) {
       axios.get(endpoint).then((response) => {
         const cardsData = response.data.results.map((card) => {
-          console.log(card);
           const {
             id,
             original_language,
@@ -39,7 +38,6 @@ export default {
         });
 
         this.store.cards = cardsData;
-        console.log(this.store.cards);
       });
     },
     search() {

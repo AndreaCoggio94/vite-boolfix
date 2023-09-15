@@ -5,11 +5,12 @@ export default {
   data() {
     return {};
   },
+  methods: {},
   components: {
     CardGenerator,
   },
   props: {
-    cards: Array,
+    cards: Object,
   },
 };
 </script>
@@ -20,7 +21,7 @@ export default {
     :key="card.id"
     :language="card.language"
     :title="card.title"
-    :vote="Math.floor(card.vote)"
+    :vote="Math.ceil(card.vote)"
     :originalTitle="card.originalTitle"
     :desc="card.desc"
   />

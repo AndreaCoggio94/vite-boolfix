@@ -10,6 +10,8 @@ export default {
 };
 </script>
 
+<!-- @submit prevent -->
+
 <template>
   <div class="input-group mb-3">
     <input
