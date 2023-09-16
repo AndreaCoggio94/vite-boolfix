@@ -21,7 +21,7 @@ export default {
 <template>
   <div class="container">
     <div class="card">
-      <img class="card-img-top" src="" :alt="title" />
+      <img class="card-img-top" :src="startImg + img" :alt="title" />
       <div class="card-body">
         <h4 class="card-title">{{ title }}</h4>
         <h5 class="card-title">{{ originalTitle }}</h5>
@@ -31,7 +31,7 @@ export default {
           alt=""
         />
         <img v-else="" :src="'/public/flags/x.png'" alt="" />
-        <img :src="startImg + img" alt="" />
+
         <p class="card-text">{{ desc }}</p>
         <p>Vote of {{ vote }}</p>
       </div>
