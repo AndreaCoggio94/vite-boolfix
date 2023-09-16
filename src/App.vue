@@ -76,19 +76,8 @@ export default {
 
           store.seriesCards = cardsData;
         });
-      // this.store.cards = this.store.movieCards.concat(this.store.seriesCards);
     },
-    // concatCards() {
-    //   console.log("concat!");
-    //   console.log(this.store.cards);
-    // },
-    // search(x) {
-    //   console.log("click");
-    //   this.fetchCards(x);
-
-    // },
   },
-  created() {},
 };
 </script>
 

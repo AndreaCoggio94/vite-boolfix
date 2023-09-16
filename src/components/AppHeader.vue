@@ -31,7 +31,6 @@ export default {
       </form>
     </div>
   </nav>
-  <!-- <SearchBar @search="search" /> -->
 </template>
 
 <style lang="scss" scoped></style>
