@@ -16,7 +16,7 @@ export default {
     AppMain,
   },
   methods: {
-    fetchCardsMovies(searchData) {
+    fetchCards(searchData) {
       axios
         .get("https://api.themoviedb.org/3/search/movie", {
           params: {
@@ -44,10 +44,9 @@ export default {
             };
           });
 
-          this.store.movieCards = cardsData;
+          store.movieCards = cardsData;
         });
-    },
-    fetchCardsSeries(searchData) {
+
       axios
         .get("https://api.themoviedb.org/3/search/tv", {
           params: {
@@ -75,32 +74,27 @@ export default {
             };
           });
 
-          this.store.seriesCards = cardsData;
+          store.seriesCards = cardsData;
         });
+      // this.store.cards = this.store.movieCards.concat(this.store.seriesCards);
     },
-    concatCards() {
-      // let movie = this.store.movieCards;
-      // let series = this.store.seriesCards;
-      // this.store.cards = "";
-      this.store.cards = this.store.movieCards.concat(this.store.seriesCards);
-      console.log(this.store.cards);
-    },
-    search() {
-      // (this.store.movieCards = []),
-      //   (this.store.seriesCards = []),
-      //   (this.store.cards = []),
-      this.fetchCardsMovies(store.filterData);
-      this.fetchCardsSeries(store.filterData);
-      this.concatCards();
-    },
+    // concatCards() {
+    //   console.log("concat!");
+    //   console.log(this.store.cards);
+    // },
+    // search(x) {
+    //   console.log("click");
+    //   this.fetchCards(x);
+
+    // },
   },
   created() {},
 };
 </script>
 
 <template>
-  <AppHeader @search="search" />
-  <AppMain :cards="this.store.cards" />
+  <AppHeader @search="fetchCards" />
+  <AppMain />
 </template>
 
 <style lang="scss"></style>

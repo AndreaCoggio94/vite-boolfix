@@ -1,5 +1,5 @@
 <script>
-import CardGenerator from "./CardGenerator.vue";
+import MovieList from "./MovieList.vue";
 
 export default {
   data() {
@@ -7,24 +7,13 @@ export default {
   },
   methods: {},
   components: {
-    CardGenerator,
-  },
-  props: {
-    cards: Object,
+    MovieList,
   },
 };
 </script>
 
 <template>
-  <CardGenerator
-    v-for="card in cards"
-    :key="card.id"
-    :language="card.language"
-    :title="card.title"
-    :vote="Math.ceil(card.vote)"
-    :originalTitle="card.originalTitle"
-    :desc="card.desc"
-  />
+  <MovieList />
 </template>
 
 <style lang="scss" scoped></style>
