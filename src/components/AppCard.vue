@@ -11,6 +11,8 @@ export default {
     vote: Number,
     originalTitle: String,
     desc: String,
+    img: String,
+    startImg: String,
   },
   methods: {},
 };
@@ -29,6 +31,7 @@ export default {
           alt=""
         />
         <img v-else="" :src="'/public/flags/x.png'" alt="" />
+        <img :src="startImg + img" alt="" />
         <p class="card-text">{{ desc }}</p>
         <p>Vote of {{ vote }}</p>
       </div>

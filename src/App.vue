@@ -33,6 +33,7 @@ export default {
               title,
               vote_average,
               overview,
+              poster_path,
             } = card;
             return {
               id,
@@ -41,6 +42,7 @@ export default {
               title,
               vote: vote_average,
               desc: overview,
+              img: poster_path,
             };
           });
 
@@ -63,6 +65,7 @@ export default {
               name,
               vote_average,
               overview,
+              poster_path,
             } = card;
             return {
               id,
@@ -71,6 +74,7 @@ export default {
               title: name,
               vote: vote_average,
               desc: overview,
+              img: poster_path,
             };
           });
 

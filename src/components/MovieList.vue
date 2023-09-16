@@ -24,6 +24,8 @@ export default {
     :vote="Math.ceil(card.vote)"
     :originalTitle="card.originalTitle"
     :desc="card.desc"
+    :img="card.img"
+    :startImg="store.linkImg"
   />
   <AppCard
     v-for="card in store.seriesCards"
@@ -33,6 +35,8 @@ export default {
     :vote="Math.ceil(card.vote)"
     :originalTitle="card.originalTitle"
     :desc="card.desc"
+    :img="card.img"
+    :startImg="store.linkImg"
   />
 </template>
 
