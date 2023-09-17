@@ -1,4 +1,17 @@
 <script>
+/* import the fontawesome core */
+import { library } from "@fortawesome/fontawesome-svg-core";
+
+/* import font awesome icon component */
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
+/* import specific icons */
+import { faStar as fasStar } from "@fortawesome/free-solid-svg-icons";
+import { faStar as farStar } from "@fortawesome/free-regular-svg-icons";
+
+/* add icons to the library */
+library.add(fasStar, farStar);
+
 export default {
   data() {
     return {
@@ -14,7 +27,14 @@ export default {
     img: String,
     startImg: String,
   },
-  methods: {},
+  methods: {
+    // vote() {
+    //   for (let i = 0; i < 5; i++) {}
+    // },
+  },
+  components: {
+    FontAwesomeIcon,
+  },
 };
 </script>
 
@@ -27,13 +47,21 @@ export default {
         <h5 class="card-title">{{ originalTitle }}</h5>
         <img
           v-if="flags.includes(language)"
-          :src="'/public/flags/' + language + '.png'"
+          :src="'/flags/' + language + '.png'"
           alt=""
         />
-        <img v-else="" :src="'/public/flags/x.png'" alt="" />
+        <img v-else="" :src="'/flags/x.png'" alt="" />
 
         <p class="card-text">{{ desc }}</p>
         <p>Vote of {{ vote }}</p>
+        <span v-for="n in 5">
+          <span v-if="n <= vote">
+            <font-awesome-icon icon="fa-solid fa-star" />
+          </span>
+          <span v-else>
+            <font-awesome-icon icon="fa-regular fa-star" />
+          </span>
+        </span>
       </div>
     </div>
   </div>
