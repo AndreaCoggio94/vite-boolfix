@@ -1,4 +1,4 @@
-# Vite Boolfix
+# Vite Boolflix
 
 ## Milestone 0:
 
