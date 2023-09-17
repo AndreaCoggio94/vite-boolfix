@@ -86,14 +86,8 @@ export default {
 </script>
 
 <template>
-  <main>
-    <AppHeader @search="fetchCards" />
-    <AppMain />
-  </main>
+  <AppHeader @search="fetchCards" />
+  <AppMain />
 </template>
 
-<style lang="scss">
-main {
-  background-color: rgb(27, 26, 26);
-}
-</style>
+<style lang="scss"></style>
