@@ -13,7 +13,14 @@ export default {
 </script>
 
 <template>
-  <MovieList />
+  <div class="container-fluid row-cols-2 row-cols-md-3 row-cols-lg-4">
+    <MovieList />
+  </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.container-fluid {
+  display: flex;
+  flex-wrap: wrap;
+}
+</style>

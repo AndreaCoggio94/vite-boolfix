@@ -27,11 +27,7 @@ export default {
     img: String,
     startImg: String,
   },
-  methods: {
-    // vote() {
-    //   for (let i = 0; i < 5; i++) {}
-    // },
-  },
+  methods: {},
   components: {
     FontAwesomeIcon,
   },
@@ -39,32 +35,53 @@ export default {
 </script>
 
 <template>
-  <div class="container">
-    <div class="card">
-      <img class="card-img-top" :src="startImg + img" :alt="title" />
-      <div class="card-body">
-        <h4 class="card-title">{{ title }}</h4>
-        <h5 class="card-title">{{ originalTitle }}</h5>
-        <img
-          v-if="flags.includes(language)"
-          :src="'/flags/' + language + '.png'"
-          alt=""
-        />
-        <img v-else="" :src="'/flags/x.png'" alt="" />
-
-        <p class="card-text">{{ desc }}</p>
-        <p>Vote of {{ vote }}</p>
-        <span v-for="n in 5">
-          <span v-if="n <= vote">
-            <font-awesome-icon icon="fa-solid fa-star" />
-          </span>
-          <span v-else>
-            <font-awesome-icon icon="fa-regular fa-star" />
-          </span>
+  <div class="card col">
+    <img class="card-img" :src="startImg + img" :alt="title" />
+    <div class="card-body">
+      <!-- title -->
+      <h4 class="card-title">{{ title }}</h4>
+      <!-- original title -->
+      <address class="card-title">{{ originalTitle }}</address>
+      <!-- language flag -->
+      <img
+        v-if="flags.includes(language)"
+        :src="'/flags/' + language + '.png'"
+        alt=""
+      />
+      <img v-else="" :src="'/flags/x.png'" alt="" />
+      <!-- description -->
+      <p class="card-text">{{ desc }}</p>
+      <!-- vote -->
+      <span v-for="n in 5">
+        <span v-if="n <= vote">
+          <font-awesome-icon icon="fa-solid fa-star" />
         </span>
-      </div>
+        <span v-else>
+          <font-awesome-icon icon="fa-regular fa-star" />
+        </span>
+      </span>
     </div>
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.card {
+  background-color: rgb(44, 38, 38);
+  color: white;
+  .card-img {
+    width: 100%;
+    max-height: 400px;
+  }
+  .card-body {
+    display: none;
+  }
+  &:hover {
+    .card-img {
+      display: none;
+    }
+    .card-body {
+      display: block;
+    }
+  }
+}
+</style>
