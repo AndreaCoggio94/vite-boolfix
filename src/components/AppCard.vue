@@ -36,7 +36,12 @@ export default {
 
 <template>
   <div class="card col">
-    <img class="card-img" :src="startImg + img" :alt="title" />
+    <!-- "item.active ? 'active' : ''" -->
+    <img
+      class="card-img"
+      :src="img ? startImg + img : '/img/missing.jpg'"
+      :alt="title"
+    />
     <div class="card-body">
       <!-- title -->
       <h4 class="title">Title: {{ title }}</h4>
@@ -80,7 +85,7 @@ export default {
   color: white;
   height: 400px;
   .card-img {
-    max-height: 400px;
+    height: 100%;
     width: 100%;
   }
   .card-body {
