@@ -12,7 +12,7 @@ export default {
 </script>
 
 <template>
-  <nav class="navbar bg-ligh">
+  <nav class="navbar bg-light">
     <div class="container-fluid">
       <a class="navbar-brand text-uppercase"> boolflix</a>
       <form
