@@ -84,6 +84,8 @@ export default {
   background-color: rgb(44, 38, 38);
   color: white;
   height: 400px;
+  padding: 0.25rem 0.4rem;
+  border: none;
   .card-img {
     height: 100%;
     width: 100%;
